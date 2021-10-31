@@ -1,0 +1,213 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://juego/niveles/Nivel3.tscn" type="PackedScene" id=1]
+[ext_resource path="res://juego/enemigos/Pinchon.tscn" type="PackedScene" id=2]
+[ext_resource path="res://juego/plataformas/PlataformaNormCesped.tscn" type="PackedScene" id=3]
+[ext_resource path="res://juego/plataformas/PlataformaCortoCesped.tscn" type="PackedScene" id=4]
+[ext_resource path="res://juego/objetos/poweUp/PowerUpVolar.tscn" type="PackedScene" id=5]
+[ext_resource path="res://juego/objetos/ZanahoriaLlave.tscn" type="PackedScene" id=6]
+[ext_resource path="res://juego/enemigos/Nubon.tscn" type="PackedScene" id=7]
+[ext_resource path="res://juego/enemigos/Volon.tscn" type="PackedScene" id=8]
+[ext_resource path="res://juego/objetos/poweUp/PowerUpSalto.tscn" type="PackedScene" id=9]
+
+[node name="Nivel3_v2" instance=ExtResource( 1 )]
+nivel_actual = "res://juego/niveles/Nivel3_v2.tscn"
+
+[node name="PlataformaNormCesped" parent="PlataformasNormales" index="0"]
+position = Vector2( 1340.26, 381.418 )
+
+[node name="PlataformaNormCesped2" parent="PlataformasNormales" index="1"]
+position = Vector2( 1844.41, 392.387 )
+
+[node name="PlataformaNormCesped3" parent="PlataformasNormales" index="2" instance=ExtResource( 3 )]
+position = Vector2( 3265.8, 1060.33 )
+
+[node name="PlataformaCortoCesped" parent="PlataformasCortas" index="0"]
+position = Vector2( 831.518, 303.446 )
+
+[node name="PlataformaCortoCesped2" parent="PlataformasCortas" index="1"]
+position = Vector2( 2086.83, 242.094 )
+
+[node name="PlataformaCortoCesped8" parent="PlataformasCortas" index="2"]
+position = Vector2( 2285.15, 9.93 )
+
+[node name="PlataformaCortoCesped4" parent="PlataformasCortas" index="3"]
+position = Vector2( 2418.83, 210.094 )
+
+[node name="PlataformaCortoCesped6" parent="PlataformasCortas" index="4"]
+position = Vector2( 836.44, 687.273 )
+
+[node name="PlataformaCortoCesped9" parent="PlataformasCortas" index="5"]
+position = Vector2( 2153.73, 821.824 )
+
+[node name="PlataformaCortoCesped10" parent="PlataformasCortas" index="6"]
+position = Vector2( 2360.14, 904.145 )
+
+[node name="PlataformaCortoCesped5" parent="PlataformasCortas" index="8"]
+position = Vector2( 2573.41, -18.387 )
+
+[node name="PlataformaCortoCesped11" parent="PlataformasCortas" index="9" instance=ExtResource( 4 )]
+position = Vector2( 2867.31, 316.928 )
+
+[node name="PlataformaCortoCesped12" parent="PlataformasCortas" index="10" instance=ExtResource( 4 )]
+position = Vector2( 3022.11, 166.856 )
+
+[node name="PlataformaCortoCesped14" parent="PlataformasCortas" index="11" instance=ExtResource( 4 )]
+position = Vector2( 4002.49, 308.259 )
+
+[node name="PlataformaCortoCesped16" parent="PlataformasCortas" index="12" instance=ExtResource( 4 )]
+position = Vector2( 3845.34, 492.194 )
+
+[node name="PlataformaCortoCesped15" parent="PlataformasCortas" index="13" instance=ExtResource( 4 )]
+position = Vector2( 3820.9, 114.087 )
+
+[node name="PlataformaCortoCesped13" parent="PlataformasCortas" index="14" instance=ExtResource( 4 )]
+position = Vector2( 2462.07, 559.433 )
+
+[node name="PlataformaLargoCesped" parent="PlataformasLargas" index="0"]
+position = Vector2( 484.5, 604.974 )
+
+[node name="PlataformaLargoCesped4" parent="PlataformasLargas" index="2"]
+position = Vector2( 2771.44, 844.034 )
+
+[node name="PlataformaLargoCesped5" parent="PlataformasLargas" index="3"]
+position = Vector2( 1756.23, 892.437 )
+
+[node name="PlataformaLargoCesped6" parent="PlataformasLargas" index="4"]
+position = Vector2( 3845.34, 525.327 )
+
+[node name="PlataformaLargoCesped7" parent="PlataformasLargas" index="5"]
+position = Vector2( 3416.61, -25.7615 )
+
+[node name="PlataformaLargoCesped3" parent="PlataformasLargas" index="6"]
+position = Vector2( 1759.47, 604.974 )
+
+[node name="PlataformaImpulsora" parent="Objetos" index="0"]
+position = Vector2( 3556.49, -39.3835 )
+
+[node name="PowerUpSalto" parent="Objetos" index="1" instance=ExtResource( 9 )]
+position = Vector2( 686.532, 548.802 )
+
+[node name="PowerUpSalto2" parent="Objetos" index="2" instance=ExtResource( 9 )]
+position = Vector2( 995.895, 547.962 )
+
+[node name="PowerUpVolar" parent="Objetos" index="3" instance=ExtResource( 5 )]
+position = Vector2( 3266.71, 992.793 )
+
+[node name="Pinchon3" parent="Enemigos" index="2"]
+position = Vector2( 3999.74, 510.18 )
+
+[node name="Pinchon4" parent="Enemigos" index="3" instance=ExtResource( 2 )]
+position = Vector2( 2912.11, 832.269 )
+
+[node name="Nubon" parent="Enemigos" index="4" instance=ExtResource( 7 )]
+position = Vector2( 2419.35, -224.234 )
+
+[node name="Volon" parent="Enemigos" index="5" instance=ExtResource( 8 )]
+position = Vector2( 1589.67, 393.111 )
+
+[node name="Volon2" parent="Enemigos" index="6" instance=ExtResource( 8 )]
+position = Vector2( 2661.76, 447.752 )
+
+[node name="MonedaBronce" parent="Monedas" index="0"]
+position = Vector2( 1623.8, 199.672 )
+
+[node name="MonedaOro" parent="Monedas" index="1"]
+position = Vector2( 1577.36, 142.609 )
+
+[node name="MonedaOro14" parent="Monedas" index="2"]
+position = Vector2( 2590.32, 789.894 )
+
+[node name="MonedaOro15" parent="Monedas" index="3"]
+position = Vector2( 2590.32, 734.664 )
+
+[node name="MonedaOro16" parent="Monedas" index="4"]
+position = Vector2( 2590.32, 681.204 )
+
+[node name="MonedaOro17" parent="Monedas" index="5"]
+position = Vector2( 2661.21, 789.894 )
+
+[node name="MonedaOro18" parent="Monedas" index="6"]
+position = Vector2( 2731.04, 789.894 )
+
+[node name="MonedaOro19" parent="Monedas" index="7"]
+position = Vector2( 2731.04, 734.664 )
+
+[node name="MonedaOro20" parent="Monedas" index="8"]
+position = Vector2( 2801.92, 789.894 )
+
+[node name="MonedaOro21" parent="Monedas" index="9"]
+position = Vector2( 2661.21, 734.664 )
+
+[node name="MonedaOro22" parent="Monedas" index="10"]
+position = Vector2( 2661.21, 681.204 )
+
+[node name="MonedaOro28" parent="Monedas" index="11"]
+position = Vector2( 1688.8, 838.297 )
+
+[node name="MonedaOro29" parent="Monedas" index="12"]
+position = Vector2( 1688.8, 783.067 )
+
+[node name="MonedaOro30" parent="Monedas" index="13"]
+position = Vector2( 1688.8, 729.607 )
+
+[node name="MonedaOro34" parent="Monedas" index="14"]
+position = Vector2( 1826.15, 838.297 )
+
+[node name="MonedaOro35" parent="Monedas" index="15"]
+position = Vector2( 1826.15, 783.067 )
+
+[node name="MonedaOro36" parent="Monedas" index="16"]
+position = Vector2( 1826.15, 729.607 )
+
+[node name="MonedaOro23" parent="Monedas" index="17"]
+position = Vector2( 2590.32, 625.974 )
+
+[node name="MonedaOro24" parent="Monedas" index="18"]
+position = Vector2( 1756.23, 838.297 )
+
+[node name="MonedaOro25" parent="Monedas" index="19"]
+position = Vector2( 1756.23, 783.067 )
+
+[node name="MonedaOro37" parent="Monedas" index="20"]
+position = Vector2( 1956.39, 838.297 )
+
+[node name="MonedaOro38" parent="Monedas" index="21"]
+position = Vector2( 1886.47, 838.297 )
+
+[node name="MonedaOro39" parent="Monedas" index="22"]
+position = Vector2( 1886.47, 783.067 )
+
+[node name="MonedaOro31" parent="Monedas" index="23"]
+position = Vector2( 1563.57, 838.297 )
+
+[node name="MonedaOro32" parent="Monedas" index="24"]
+position = Vector2( 1631.01, 838.297 )
+
+[node name="MonedaOro33" parent="Monedas" index="25"]
+position = Vector2( 1631.01, 783.067 )
+
+[node name="MonedaOro26" parent="Monedas" index="26"]
+position = Vector2( 1756.23, 729.607 )
+
+[node name="MonedaOro27" parent="Monedas" index="27"]
+position = Vector2( 1756.23, 674.377 )
+
+[node name="MonedaOro3" parent="Monedas" index="29"]
+position = Vector2( 2086.83, 184.558 )
+
+[node name="MonedaPlata" parent="Monedas" index="30"]
+position = Vector2( 1542.57, 199.672 )
+
+[node name="ZanahoriaLlave" parent="Zanahorias" index="0"]
+position = Vector2( 828.788, 250.886 )
+
+[node name="ZanahoriaLlave2" parent="Zanahorias" index="1"]
+position = Vector2( 2149.17, 723.409 )
+
+[node name="ZanahoriaLlave3" parent="Zanahorias" index="2" instance=ExtResource( 6 )]
+position = Vector2( 3022.11, 108.558 )
+
+[node name="Portal" parent="." index="10"]
+position = Vector2( 3552.35, -372.688 )
+proximo_nivel = "res://juego/menus/MenuVictoria.tscn"

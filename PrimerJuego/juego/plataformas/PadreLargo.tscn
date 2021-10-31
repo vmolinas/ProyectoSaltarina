@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://juego/plataformas/Padre.tscn" type="PackedScene" id=1]
+
+[node name="PadreLargo" instance=ExtResource( 1 )]
+
+[node name="Sprite" parent="." index="0"]
+scale = Vector2( 4.5, 1 )
+
+[node name="CollisionPolygon2D" parent="." index="1"]
+visible = true
+polygon = PoolVector2Array( -872.098, -42.4162, 836.445, -42.0397, 837.232, -25.5219, 837.215, -9.76824, 734.979, 26.3912, 714.528, 35.0434, 692.505, 39.7628, -732.633, 51.9079, -745.876, 49.2593, -762.651, 42.1962, -871.82, -10.4357, -872.376, -26.2869 )

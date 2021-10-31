@@ -1,0 +1,237 @@
+[gd_scene load_steps=18 format=2]
+
+[ext_resource path="res://juego/menus/botones/MenuPausaNormal.tres" type="StyleBox" id=1]
+[ext_resource path="res://juego/menus/botones/BotonSalir.gd" type="Script" id=2]
+[ext_resource path="res://recursos/Fonts/Kenney Future Narrow.ttf" type="DynamicFontData" id=3]
+[ext_resource path="res://recursos/Players/bunny2_ready.png" type="Texture" id=4]
+[ext_resource path="res://recursos/Players/bunny2_jump.png" type="Texture" id=5]
+[ext_resource path="res://juego/menus/botones/BotonMenu.tscn" type="PackedScene" id=6]
+[ext_resource path="res://juego/menus/MenuPrincipal.gd" type="Script" id=7]
+[ext_resource path="res://recursos/Environment/ground_grass.png" type="Texture" id=8]
+[ext_resource path="res://recursos/Background/bg_layer1.png" type="Texture" id=9]
+[ext_resource path="res://recursos/Background/bg_layer4.png" type="Texture" id=10]
+[ext_resource path="res://recursos/Background/bg_layer3.png" type="Texture" id=11]
+[ext_resource path="res://recursos/Background/bg_layer2.png" type="Texture" id=12]
+[ext_resource path="res://recursos/Fonts/Kenney Blocks.ttf" type="DynamicFontData" id=13]
+
+[sub_resource type="Animation" id=1]
+resource_name = "animacion_menu"
+length = 2.6
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("bunny2_ready:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1.4, 2.6 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ true, false, true ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("bunny2_jump:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1.4, 2.6 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ false, true, false ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("bunny2_jump:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 1.4, 1.8, 2.2, 2.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 373.149, 458.938 ), Vector2( 366.792, 175.002 ), Vector2( 366.792, 175.002 ), Vector2( 373.149, 458.938 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("bunny2_jump:rotation_degrees")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 1.4, 1.8, 2.2, 2.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 0.0, 0.0, 359.999, 359.999 ]
+}
+
+[sub_resource type="StyleBoxFlat" id=2]
+bg_color = Color( 0.45098, 0.054902, 0.258824, 1 )
+border_width_bottom = 1
+
+[sub_resource type="DynamicFont" id=3]
+size = 18
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=4]
+size = 45
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 13 )
+
+[node name="MenuPrincipal" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 7 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+level_inicial = "res://juego/niveles/Nivel1_v2.tscn"
+
+[node name="ColorRect" type="ColorRect" parent="."]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0.176471, 0.223529, 0.164706, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="bunny2_ready" type="Sprite" parent="."]
+position = Vector2( 374.569, 463.149 )
+texture = ExtResource( 4 )
+
+[node name="bunny2_jump" type="Sprite" parent="."]
+visible = false
+position = Vector2( 373.149, 458.938 )
+rotation = 6.28317
+texture = ExtResource( 5 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "animacion_menu"
+anims/animacion_menu = SubResource( 1 )
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+margin_left = 800.973
+margin_top = 352.652
+margin_right = 1128.97
+margin_bottom = 583.652
+custom_constants/separation = 15
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BotonIniciar" parent="VBoxContainer" instance=ExtResource( 6 )]
+margin_right = 327.0
+margin_bottom = 107.0
+text = "Iniciar Juego"
+
+[node name="BotonSalir" type="Button" parent="VBoxContainer"]
+margin_top = 122.0
+margin_right = 327.0
+margin_bottom = 230.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_styles/hover = ExtResource( 1 )
+custom_styles/pressed = ExtResource( 1 )
+custom_styles/normal = SubResource( 2 )
+custom_fonts/font = SubResource( 3 )
+text = "Salir"
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+scroll_base_offset = Vector2( 0, -350 )
+
+[node name="ParallaxFondo" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2( 0, 1 )
+motion_mirroring = Vector2( 2048, 2048 )
+
+[node name="TextureRect" type="TextureRect" parent="ParallaxBackground/ParallaxFondo"]
+margin_right = 40.0
+margin_bottom = 40.0
+texture = ExtResource( 9 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ParallaxNubesLejanas" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2( 0.3, 1 )
+motion_mirroring = Vector2( 2048, 0 )
+
+[node name="TextureRect" type="TextureRect" parent="ParallaxBackground/ParallaxNubesLejanas"]
+margin_left = -720.891
+margin_top = -696.833
+margin_right = 1327.11
+margin_bottom = 1351.17
+texture = ExtResource( 12 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ParallaxNubesMedias" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2( 0.6, 1 )
+motion_mirroring = Vector2( 2048, 0 )
+
+[node name="TextureRect" type="TextureRect" parent="ParallaxBackground/ParallaxNubesMedias"]
+margin_left = -1808.0
+margin_top = -704.0
+margin_right = 240.0
+margin_bottom = 1344.0
+texture = ExtResource( 11 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ParallaxNubesCercanas" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_mirroring = Vector2( 2048, 0 )
+
+[node name="TextureRect" type="TextureRect" parent="ParallaxBackground/ParallaxNubesCercanas"]
+margin_left = -1247.03
+margin_top = -739.892
+margin_right = 800.973
+margin_bottom = 1308.11
+texture = ExtResource( 10 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ground_grass" type="Sprite" parent="."]
+position = Vector2( 379.02, 606.183 )
+texture = ExtResource( 8 )
+
+[node name="Panel" type="Panel" parent="."]
+margin_left = 645.873
+margin_top = 115.072
+margin_right = 1232.87
+margin_bottom = 264.072
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="Panel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="Label" type="Label" parent="Panel"]
+modulate = Color( 0.737255, 0.443137, 0.878431, 1 )
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -232.0
+margin_top = -34.5
+margin_right = 232.0
+margin_bottom = 34.5
+custom_fonts/font = SubResource( 4 )
+text = "Menu Principal"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="pressed" from="VBoxContainer/BotonIniciar" to="." method="_on_BotonIniciar_pressed"]
+[connection signal="pressed" from="VBoxContainer/BotonSalir" to="VBoxContainer/BotonSalir" method="_on_pressed"]

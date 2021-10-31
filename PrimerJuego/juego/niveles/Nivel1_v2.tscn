@@ -1,0 +1,84 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://juego/niveles/NivelBase.tscn" type="PackedScene" id=1]
+[ext_resource path="res://juego/plataformas/PlataformaLargoCesped.tscn" type="PackedScene" id=2]
+[ext_resource path="res://juego/personaje/Saltarina.tscn" type="PackedScene" id=3]
+[ext_resource path="res://juego/objetos/Portal.tscn" type="PackedScene" id=4]
+[ext_resource path="res://juego/objetos/ZanahoriaLlave.tscn" type="PackedScene" id=5]
+[ext_resource path="res://juego/plataformas/PlataformaNormCesped.tscn" type="PackedScene" id=6]
+[ext_resource path="res://juego/objetos/MonedaPlata.tscn" type="PackedScene" id=7]
+[ext_resource path="res://juego/objetos/MonedaBronce.tscn" type="PackedScene" id=8]
+[ext_resource path="res://juego/plataformas/PlataformaCortoCesped.tscn" type="PackedScene" id=9]
+
+[node name="Nivel1_v2" instance=ExtResource( 1 )]
+nivel_actual = "res://juego/niveles/Nivel1_v2.tscn"
+
+[node name="TextureRect" parent="ParallaxBackground/ParallaxNubesLejanas" index="0"]
+margin_right = 2048.0
+margin_bottom = 2048.0
+
+[node name="TextureRect" parent="ParallaxBackground/ParallaxNubesMedias" index="0"]
+margin_right = 2048.0
+margin_bottom = 2048.0
+
+[node name="TextureRect" parent="ParallaxBackground/ParallaxNubesCercanas" index="0"]
+margin_right = 2048.0
+margin_bottom = 2048.0
+
+[node name="PlataformaNormCesped" parent="PlataformasNormales" index="0" instance=ExtResource( 6 )]
+position = Vector2( 342.492, 640.55 )
+
+[node name="PlataformaNormCesped2" parent="PlataformasNormales" index="1" instance=ExtResource( 6 )]
+position = Vector2( 1597.4, 610.55 )
+
+[node name="PlataformaNormCesped3" parent="PlataformasNormales" index="2" instance=ExtResource( 6 )]
+position = Vector2( 1826.24, 472.616 )
+
+[node name="PlataformaCortoCesped" parent="PlataformasCortas" index="0" instance=ExtResource( 9 )]
+position = Vector2( 967.876, 397.5 )
+
+[node name="PlataformaCortoCesped2" parent="PlataformasCortas" index="1" instance=ExtResource( 9 )]
+position = Vector2( 1186.5, 397.5 )
+
+[node name="PlataformaLargoCesped" parent="PlataformasLargas" index="0" instance=ExtResource( 2 )]
+position = Vector2( 711.376, 539.209 )
+
+[node name="PlataformaLargoCesped2" parent="PlataformasLargas" index="1" instance=ExtResource( 2 )]
+position = Vector2( 1225.24, 539.209 )
+
+[node name="PlataformaLargoCesped3" parent="PlataformasLargas" index="2" instance=ExtResource( 2 )]
+position = Vector2( 1225.24, 539.209 )
+
+[node name="MonedaBronce" parent="Monedas" index="0" instance=ExtResource( 8 )]
+position = Vector2( 571.803, 484.115 )
+
+[node name="MonedaBronce2" parent="Monedas" index="1" instance=ExtResource( 8 )]
+position = Vector2( 624.803, 484.115 )
+
+[node name="MonedaBronce3" parent="Monedas" index="2" instance=ExtResource( 8 )]
+position = Vector2( 679.803, 484.115 )
+
+[node name="MonedaBronce5" parent="Monedas" index="3" instance=ExtResource( 8 )]
+position = Vector2( 938.803, 347.115 )
+
+[node name="MonedaBronce6" parent="Monedas" index="4" instance=ExtResource( 8 )]
+position = Vector2( 993.803, 347.115 )
+
+[node name="MonedaPlata2" parent="Monedas" index="5" instance=ExtResource( 7 )]
+position = Vector2( 1075.47, 260.025 )
+
+[node name="MonedaBronce7" parent="Monedas" index="6" instance=ExtResource( 8 )]
+position = Vector2( 1158.8, 347.115 )
+
+[node name="MonedaBronce8" parent="Monedas" index="7" instance=ExtResource( 8 )]
+position = Vector2( 1213.8, 347.115 )
+
+[node name="ZanahoriaLlave" parent="Zanahorias" index="0" instance=ExtResource( 5 )]
+position = Vector2( 1592.93, 543.333 )
+
+[node name="Saltarina" parent="." index="9" instance=ExtResource( 3 )]
+position = Vector2( 341.447, 622.738 )
+
+[node name="Portal" parent="." index="10" instance=ExtResource( 4 )]
+position = Vector2( 1819.14, 380.633 )
+proximo_nivel = "res://juego/niveles/Nivel2.tscn"
